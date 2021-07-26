@@ -1,7 +1,7 @@
 const Express = require('express')
 const cors = require('cors')
 const bd = require('./src/data/sqlite-bd.js')
-const port = 3030
+const port = 3050
 const app = Express()
 const staffController = require('./src/controllers/staff-controllers')
 
