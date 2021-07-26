@@ -30,7 +30,7 @@ module.exports = (app, bd) =>{
     app.post('/academia/staff/newStaff', async (req, res)=>{
         try{
             const body = req.body
-            const infos = [body.NOME, body.FOTO, body.IDADE, body.FUNCAO, body.EMAIL, body.RUA, body.NUMERO ,body.CIDADE, body.ESTADO, body.TELEFONE]
+            const infos = [body.NOME, body.CPF, body.IDADE, body.FUNCAO, body.EMAIL, body.RUA, body.NUMERO ,body.CIDADE, body.ESTADO, body.TELEFONE]
             const respostaNewStaff = await 
             DaoStaff.NewStaff(infos)
             res.send(respostaNewStaff)
@@ -53,7 +53,7 @@ module.exports = (app, bd) =>{
         try{
             const id = req.params.ID
             const body = req.body
-            const infos = [body.NOME, body.FOTO, body.IDADE, body.FUNCAO, body.EMAIL, body.RUA, body.NUMERO ,body.CIDADE, body.ESTADO, body.TELEFONE]
+            const infos = [body.NOME, body.CPF, body.IDADE, body.FUNCAO, body.EMAIL, body.RUA, body.NUMERO ,body.CIDADE, body.ESTADO, body.TELEFONE]
             const respostaEditStaff = await 
             DaoStaff.EditStaff(infos, id)
             

@@ -27,7 +27,7 @@ module.exports = class StaffDao {
 
     NewStaff(infos){
         return new Promise((resolve, reject)=>{
-            const query = 'INSERT INTO STAFF (NOME, FOTO, IDADE, FUNCAO, EMAIL, RUA, NUMERO, CIDADE, ESTADO, TELEFONE) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
+            const query = 'INSERT INTO STAFF (NOME, CPF, IDADE, FUNCAO, EMAIL, RUA, NUMERO, CIDADE, ESTADO, TELEFONE) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
             const parametros = [infos[0], infos[1], infos[2], infos[3], infos[4], infos[5], infos[6], infos[7], infos[8], infos[9],]
             this.bd.run(query, parametros, (error, response)=>{
                 if(error) reject(`Erro ao adicionar STAFF. ${error}`)
@@ -48,7 +48,7 @@ module.exports = class StaffDao {
 
     EditStaff(infos, id){
         return new Promise((resolve,reject)=> {
-            const query = 'UPDATE STAFF SET NOME = (?), FOTO = (?), IDADE = (?), FUNCAO = (?), EMAIL = (?), RUA = (?), NUMERO = (?), CIDADE = (?), ESTADO = (?), TELEFONE = (?) WHERE ID = (?)'
+            const query = 'UPDATE STAFF SET NOME = (?), CPF = (?), IDADE = (?), FUNCAO = (?), EMAIL = (?), RUA = (?), NUMERO = (?), CIDADE = (?), ESTADO = (?), TELEFONE = (?) WHERE ID = (?)'
             const parametros = [infos[0], infos[1], infos[2], infos[3], infos[4], infos[5], infos[6], infos[7], infos[8], infos[9], id]
             this.bd .run(query, parametros, (error, response)=>{
                 if(error) reject(`Erro ao editar Staff. ${error}`) 
